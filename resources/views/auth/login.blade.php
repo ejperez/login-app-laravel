@@ -1,12 +1,12 @@
 <x-layout>
     <div class="p-8 bg-white rounded-lg shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+        <h1 class="text-2xl font-bold text-center mb-6">Login</h1>
 
         @if ($errors->any())
             <div class="text-sm text-red-500 mb-4">{{ $errors->first() }}</div>
         @endif
 
-        <form action="#" method="POST" class="space-y-4">
+        <form action="" method="POST" class="space-y-4">
             @csrf
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>

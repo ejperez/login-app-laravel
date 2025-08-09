@@ -1,9 +1,14 @@
 <x-layout>
     <div class="w-full max-w-md px-6 py-8 bg-white shadow-lg rounded-lg">
-        <h2 class="text-2xl font-bold mb-6 text-center">Create Username & Password (2/2)</h2>
+        <h1 class="text-2xl font-bold mb-6 text-center">Create Username & Password (2/2)</h1>
 
-        <form action="/register-2" method="POST">
+        <div class="text-sm text-red-500 mb-4">{{ $errors->first('general') }}</div>
+
+        <form id="registration-form" action="" method="POST">
             @csrf
+            @foreach ($sessionData as $key => $value)
+                <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+            @endforeach
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">User Name</label>
                 <input type="text" id="name" name="name" required value="{{ old('name') }}"
@@ -30,6 +35,17 @@
                 class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 mb-4">Finish</button>
             <a href="/register?backed=true"
                 class="block text-center w-full bg-gray-300 py-2 px-4 rounded-md hover:bg-gray-700 hover:text-white mb-4">Back</a>
+            <div class="text-sm">Already have an account? <a class="text-blue-700" href="/">Sign in</a></div>
         </form>
+
+        @if ($success ?? false)
+            <div id="success-modal" class="fixed bg-blue-300/50 inset-0 flex items-center justify-center"
+                data-redirect-to="{{ $redirectTo ?? '/' }}">
+                <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
+                    <p class="text-center text-xl">Successfully signed up!</p>
+                    <p class="text-xs text-center">Redirecting you to the login page...</p>
+                </div>
+            </div>
+        @endif
     </div>
 </x-layout>
