@@ -1,6 +1,9 @@
 <x-layout>
     <div class="w-full max-w-md px-6 py-8 bg-white shadow-lg rounded-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center">Personal Information (1/2)</h1>
+        <div class="mb-6 text-center">
+            <h1 class="text-2xl font-bold">Personal Information</h1>
+            <p>Step 1 of 2</p>
+        </div>
 
         <form id="registration-form" action="" method="POST">
             @csrf
