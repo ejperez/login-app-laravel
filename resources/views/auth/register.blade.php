@@ -1,8 +1,8 @@
 <x-layout>
     <div class="w-full max-w-md px-6 py-8 bg-white shadow-lg rounded-lg">
-        <h2 class="text-2xl font-bold mb-6 text-center">Personal Information (1/2)</h2>
+        <h1 class="text-2xl font-bold mb-6 text-center">Personal Information (1/2)</h1>
 
-        <form action="/register" method="POST">
+        <form id="registration-form" action="" method="POST">
             @csrf
             <div class="mb-4">
                 <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
