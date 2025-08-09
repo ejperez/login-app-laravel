@@ -41,7 +41,7 @@
             <div class="text-sm">Already have an account? <a class="text-blue-700" href="/">Sign in</a></div>
         </form>
 
-        @if ($success ?? false)
+        {{-- @if ($success ?? false) --}}
             <div id="success-modal" class="fixed bg-blue-300/50 inset-0 flex items-center justify-center"
                 data-redirect-to="{{ $redirectTo ?? '/' }}">
                 <div class="bg-white p-6 rounded shadow-lg w-full max-w-md text-center">
@@ -49,6 +49,6 @@
                     <p>Redirecting you to the login page...</p>
                 </div>
             </div>
-        @endif
+        {{-- @endif --}}
     </div>
 </x-layout>
