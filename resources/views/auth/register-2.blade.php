@@ -1,6 +1,9 @@
 <x-layout>
     <div class="w-full max-w-md px-6 py-8 bg-white shadow-lg rounded-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center">Create Username & Password (2/2)</h1>
+        <div class="mb-6 text-center">
+            <h1 class="text-2xl font-bold">Create User Name & Password</h1>
+            <p>Step 2 of 2</p>
+        </div>
 
         <div class="text-sm text-red-500 mb-4">{{ $errors->first('general') }}</div>
 
@@ -38,14 +41,14 @@
             <div class="text-sm">Already have an account? <a class="text-blue-700" href="/">Sign in</a></div>
         </form>
 
-        @if ($success ?? false)
+        {{-- @if ($success ?? false) --}}
             <div id="success-modal" class="fixed bg-blue-300/50 inset-0 flex items-center justify-center"
                 data-redirect-to="{{ $redirectTo ?? '/' }}">
-                <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
-                    <p class="text-center text-xl">Successfully signed up!</p>
-                    <p class="text-xs text-center">Redirecting you to the login page...</p>
+                <div class="bg-white p-6 rounded shadow-lg w-full max-w-md text-center">
+                    <h2 class="text-2xl font-bold">Successfully signed up!</h2>
+                    <p>Redirecting you to the login page...</p>
                 </div>
             </div>
-        @endif
+        {{-- @endif --}}
     </div>
 </x-layout>
